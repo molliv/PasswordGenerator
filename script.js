@@ -40,12 +40,24 @@ function getPasswordOptions() {
   //confirming character type variables
 
   var lowerCasedCharacters = confirm("Press OK to confirm lower cased letter");
+  if (lowerCasedCharacters === false){
+    alert("You must have a lower cased letter");
+  }
 
   var upperCasedCharacters = confirm("Press OK to confirm upper cased letter");
+  if (upperCasedCharacters === false){
+    alert("You must have upper cased letter");
+  } 
 
   var numericCharacters = confirm("Press OK to confirm number");
+  if (numericCharacters === false){
+    alert("You must have number");
+  }
 
   var specialCharacters = confirm("Press OK to confirm special character");
+  if (specialCharacters === false){
+    alert("You must have special character");
+  } 
 }
 
 // Assignment Code 
