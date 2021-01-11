@@ -1,3 +1,13 @@
+//array of lowercase letters
+var lowerCasedCharacters = [
+  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+];
+
+//array of uppercase letters
+var upperCasedCharacters = [
+  "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+];
+
 // array of numbers
 var numericCharacters = [
   "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
@@ -6,16 +16,6 @@ var numericCharacters = [
 // array of special characters
 var spcialCharacters = [
   "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?", "/", "+"
-];
-
-//array of uppercase letters
-var upperCasedCharacters = [
-  "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
-];
-
-//array of lowercase letters
-var lowerCasedCharacters = [
-  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
 ];
 
 //function to prompt user for password options
@@ -37,21 +37,25 @@ function getPasswordOptions() {
     alert("Password can be no longer than 128 characters");
     return;
   }
+  //confirming character type variables
 
-  
+  var lowerCasedCharacters = confirm("Press OK to confirm lower cased letter");
+
+  var upperCasedCharacters = confirm("Press OK to confirm upper cased letter");
+
+  var numericCharacters = confirm("Press OK to confirm number");
+
+  var specialCharacters = confirm("Press OK to confirm special character");
 }
 
 // Assignment Code 
 var generateBtn = document.querySelector("#generate");
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
