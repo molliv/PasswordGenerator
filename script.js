@@ -14,7 +14,7 @@ var numericCharacters = [
 ];
 
 // array of special characters
-var spcialCharacters = [
+var specialCharacters = [
   "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?", "/", "+"
 ];
 
@@ -76,6 +76,35 @@ function generatePassword() {
   var result = [];
   var possibleCharacters = [];
   var guaranteedCharacters = [];
+//conditional statement to add lower cased characters into array
+  if (options.confirmLower) {
+    possibleCharacter = possibleCharacters.concat(lowerCasedCharacters);
+    guaranteedCharacters.push(getRandomItem(lowerCasedCharacters));
+    console.log(lowerCasedCharacters);
+  }
+//conditional statement to add upper cased characters into array
+  if (options.confirmUpper) {
+    possibleCharacters = possibleCharacters.concat(upperCasedCharacters); 
+    guaranteedCharacters.push(getRandomItem(upperCasedCharacters));
+    console.log(upperCasedCharacters);
+  }
+//conditional statement to add numeric characters into array
+if (options.confirmNumeric) {
+  possibleCharacters = possibleCharacters.concat(numericCharacters);
+  guaranteedCharacters.push(getRandomItem(numericCharacters));
+  console.log(numericCharacters);
+}
+//conditional statement to add special characters into array
+if (options.confirmSpecial) {
+  possibleCharacters = possibleCharacters.concat(specialCharacters);
+  guaranteedCharacters.push(getRandomItem(specialCharacters));
+  console.log(specialCharacters);
+}
+
+
+
+
+
 }
 
 // Assignment Code 
