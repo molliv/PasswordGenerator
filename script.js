@@ -39,26 +39,26 @@ function getPasswordOptions() {
   }
   //confirming character type variables
 
-  var lowerCasedCharacters = confirm("Press OK to confirm lower cased letter");
-  if (lowerCasedCharacters === false){
+  var confirmLower = confirm("Press OK to confirm lower cased letter");
+  if (confirmLower === false){
     alert("You must have a lower cased letter");
     return;
   }
 
-  var upperCasedCharacters = confirm("Press OK to confirm upper cased letter");
-  if (upperCasedCharacters === false){
+  var confirmUpper = confirm("Press OK to confirm upper cased letter");
+  if (confirmUpper === false){
     alert("You must have upper cased letter");
     return;
   } 
 
-  var numericCharacters = confirm("Press OK to confirm number");
-  if (numericCharacters === false){
+  var confirmNumeric = confirm("Press OK to confirm number");
+  if (confirmNumeric === false){
     alert("You must have number");
     return;
   }
 
-  var specialCharacters = confirm("Press OK to confirm special character");
-  if (specialCharacters === false){
+  var confirmSpecial = confirm("Press OK to confirm special character");
+  if (confirmSpecial === false){
     alert("You must have special character");
     return;
   } 
@@ -69,6 +69,13 @@ function getRandomItem(arr){
   var randIndex = Math.floor(Math.random() * arr.length);
   var randElement = arr[randIndex];
   return randElement;
+}
+ //generating password with user input
+function generatePassword() {
+  var options = getPasswordOptions();
+  var result = [];
+  var possibleCharacters = [];
+  var guaranteedCharacters = [];
 }
 
 // Assignment Code 
