@@ -70,7 +70,7 @@ function getRandomItem(arr){
   var randElement = arr[randIndex];
   return randElement;
 }
- //generating password with user input
+//generating password with user input
 function generatePassword() {
   var options = getPasswordOptions();
   var result = [];
@@ -89,22 +89,27 @@ function generatePassword() {
     console.log(upperCasedCharacters);
   }
 //conditional statement to add numeric characters into array
-if (options.confirmNumeric) {
-  possibleCharacters = possibleCharacters.concat(numericCharacters);
-  guaranteedCharacters.push(getRandomItem(numericCharacters));
-  console.log(numericCharacters);
-}
+  if (options.confirmNumeric) {
+    possibleCharacters = possibleCharacters.concat(numericCharacters);
+    guaranteedCharacters.push(getRandomItem(numericCharacters));
+    console.log(numericCharacters);
+  }
 //conditional statement to add special characters into array
-if (options.confirmSpecial) {
-  possibleCharacters = possibleCharacters.concat(specialCharacters);
-  guaranteedCharacters.push(getRandomItem(specialCharacters));
-  console.log(specialCharacters);
-}
-
-
-
-
-
+  if (options.confirmSpecial) {
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
+    guaranteedCharacters.push(getRandomItem(specialCharacters));
+    console.log(specialCharacters);
+  } 
+//Forloop to iterate length of password
+  for (var i = 0; i < options.length; i++) {
+    var possibleCharacter = getRandomItem(possibleCharacters);
+    result.push(possibleCharacter);
+  }
+//Forloop to include one guaranteed character
+  for (var i =0; i < guaranteedCharacters.length; i++) {
+    result[i] = guaranteedCharacters[i];
+  }
+  return result.join(" ");
 }
 
 // Assignment Code 
