@@ -1,6 +1,7 @@
 //array of lowercase letters
 var lowerCasedCharacters = [
   "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+  //"abcdefghijklmnopqrstuvwxyz ".split("")
 ];
 
 //array of uppercase letters
@@ -10,7 +11,8 @@ var upperCasedCharacters = [
 
 // array of numbers
 var numericCharacters = [
-  "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+  //"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+  1, 2, 3, 4, 5, 6, 7, 8, 9
 ];
 
 // array of special characters
@@ -62,6 +64,16 @@ function getPasswordOptions() {
     alert("You must have special character");
     return;
   } 
+
+  //object to store user's input
+  var getPasswordOptions = {
+    length: length,
+    confirmUpper: confirmUpper,
+    confirmLower: confirmLower,
+    confirmNumeric: confirmNumeric,
+    confirmSpecial: confirmSpecial
+  }
+  return getPasswordOptions;
 }
 
 //function to get random item from array
