@@ -1,7 +1,6 @@
 //array of lowercase letters
 var lowerCasedCharacters = [
   "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
-  //"abcdefghijklmnopqrstuvwxyz ".split("")
 ];
 
 //array of uppercase letters
@@ -11,7 +10,6 @@ var upperCasedCharacters = [
 
 // array of numbers
 var numericCharacters = [
-  //"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
   1, 2, 3, 4, 5, 6, 7, 8, 9
 ];
 
@@ -41,25 +39,25 @@ function getPasswordOptions() {
   }
   //confirming character type variables
 
-  var confirmLower = confirm("Press OK to confirm lower cased letter");
+  var confirmLower = confirm("Press OK to confirm using lower cased letter");
   if (confirmLower === false){
     alert("You must have a lower cased letter");
     return;
   }
 
-  var confirmUpper = confirm("Press OK to confirm upper cased letter");
+  var confirmUpper = confirm("Press OK to confirm using upper cased letter");
   if (confirmUpper === false){
     alert("You must have upper cased letter");
     return;
   } 
 
-  var confirmNumeric = confirm("Press OK to confirm number");
+  var confirmNumeric = confirm("Press OK to confirm using a number");
   if (confirmNumeric === false){
     alert("You must have number");
     return;
   }
 
-  var confirmSpecial = confirm("Press OK to confirm special character");
+  var confirmSpecial = confirm("Press OK to confirm using a special character");
   if (confirmSpecial === false){
     alert("You must have special character");
     return;
@@ -90,7 +88,7 @@ function generatePassword() {
   var guaranteedCharacters = [];
 //conditional statement to add lower cased characters into array
   if (options.confirmLower) {
-    possibleCharacter = possibleCharacters.concat(lowerCasedCharacters);
+    possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
     guaranteedCharacters.push(getRandomItem(lowerCasedCharacters));
     console.log(lowerCasedCharacters);
   }
